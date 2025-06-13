@@ -1,13 +1,143 @@
-
-.right-image {
-  float: right;          /
-  margin-left: 20px;     
-  max-width: 30%;       
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
+body {
+  background-color: #ffffff;
+  color: #1e3a8a;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
 
+/* Page layout */
 .page {
-  clear: both;           
-  padding: 20px;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s ease;
+}
+
+.page.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Image Styling: Align right and vertically center */
+.right-image {
+  position: absolute;     /* Positioning the image absolutely on the page */
+  right: 0;               /* Align the image to the right */
+  top: 50%;               /* Center the image vertically */
+  transform: translateY(-50%); /* Adjust the image to truly be centered vertically */
+  max-width: 30%;         /* Limit the width of the image */
+  margin-right: 20px;     /* Add some space from the right edge */
+}
+
+/* Typography */
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.highlight {
+  color: #1e3a8a;
+  font-weight: bold;
+}
+
+.button {
+  background-color: #1e3a8a;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-top: 30px;
+  transition: background 0.3s;
+}
+
+.button:hover {
+  background-color: #2c4ca5;
+}
+
+/* Clear Floats */
+.page {
+  clear: both;   /* Ensures content below the floated image stays below it */
+}
+
+/* Letter styling */
+.letter {
+  white-space: pre-line;
+  font-size: 1.1rem;
+  max-width: 600px;
+  text-align: left;
+  border-left: 3px solid #1e3a8a;
+  padding-left: 15px;
+  min-height: 200px;
+}
+
+/* Falling symbols (confetti) */
+.falling {
+  position: fixed;
+  top: -30px;
+  font-size: 24px;
+  animation: fall linear infinite;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.blue-heart {
+  color: #1e3a8a;
+}
+
+.yellow-star {
+  color: #facc15;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(120vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .button {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+
+  .letter {
+    font-size: 1rem;
+  }
+
+  .right-image {
+    max-width: 50%;  /* Resize the image for small screens */
+  }
 }
