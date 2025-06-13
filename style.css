@@ -1,0 +1,13 @@
+
+.right-image {
+  float: right;          /
+  margin-left: 20px;     
+  max-width: 30%;       
+}
+
+
+.page {
+  clear: both;           
+  padding: 20px;
+  text-align: center;
+}
